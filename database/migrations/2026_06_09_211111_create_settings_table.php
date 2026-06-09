@@ -12,9 +12,24 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('settings', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+    $table->id();
+
+    $table->string('site_name')->nullable();
+
+    $table->text('about_us')->nullable();
+
+    $table->string('phone')->nullable();
+
+    $table->string('whatsapp')->nullable();
+
+    $table->string('telegram')->nullable();
+
+    $table->string('instagram')->nullable();
+
+    $table->string('address')->nullable();
+
+    $table->timestamps();
+});
     }
 
     /**
