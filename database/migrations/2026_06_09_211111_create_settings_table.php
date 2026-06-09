@@ -11,19 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-       Schema::create('behind_scenes', function (Blueprint $table) {
-    $table->id();
-
-    $table->string('title');
-
-    $table->string('media')->nullable();
-
-    $table->text('description')->nullable();
-
-    $table->boolean('is_active')->default(true);
-
-    $table->timestamps();
-});
+        Schema::create('settings', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -31,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('behind_scenes');
+        Schema::dropIfExists('settings');
     }
 };
